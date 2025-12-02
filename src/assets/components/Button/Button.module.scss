@@ -1,0 +1,9 @@
+@import '../../styles/global/colors.scss';
+@import '../../styles/utils/typography.scss';
+
+button {
+   @include text-button;
+   background: $text-dark;
+   padding: 1.2rem 2rem;
+   color: $text-light;
+}
