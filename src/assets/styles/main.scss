@@ -1,0 +1,15 @@
+@import './global/base.scss';
+// @import '~normalize.css/normalize.css';
+@import './global/reset.scss';
+@import './global/typography.scss';
+@import './global/colors.scss';
+
+@import './utils/breakpoints.scss';
+@import './utils/typography.scss';
+
+@import '../components/Button/Button.module.scss';
+@import '../components/Hero/Hero.scss';
+
+main {
+    overflow: hidden;
+}
