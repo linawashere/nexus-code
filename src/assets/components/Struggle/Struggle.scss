@@ -1,0 +1,31 @@
+@import '../../styles/global/colors.scss';
+
+.struggle {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 4rem;
+    gap: 5rem;
+    background: $light;
+
+    &__text {
+        display: flex;
+        gap: 13rem;
+        h2 {
+            min-width: 44rem;
+        }
+        &-title {
+            @include text-body;
+        }
+    }
+
+    &__images {
+        display: flex;
+        gap: 3rem;
+        justify-content: space-between;
+
+        img {
+            width: 42rem;
+        }
+    }
+
+}
