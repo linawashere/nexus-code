@@ -10,9 +10,15 @@
     &__text {
         display: flex;
         gap: 13rem;
+
         h2 {
             min-width: 44rem;
+
+            @include tablet {
+                min-width: 35rem;
+            }
         }
+
         &-title {
             @include text-body;
         }
@@ -23,9 +29,23 @@
         gap: 3rem;
         justify-content: space-between;
 
+        @include tablet {
+            gap: 1rem;
+        }
+
         img {
+            display: block;
+            flex: 1;
+
+            @include tablet {
+                max-width: 20rem;
+            }
+
+            @include mobile {
+                max-width: 10rem;
+            }
+
             width: 42rem;
         }
     }
-
 }
