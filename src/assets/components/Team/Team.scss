@@ -1,0 +1,132 @@
+@import '../../styles/global/colors.scss';
+
+.team {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 4rem;
+    gap: 5rem;
+    overflow: hidden;
+
+    @include mobile {
+        padding: 2rem;
+        flex-direction: column;
+    }
+
+    @include tablet {
+        padding: 3rem;
+    }
+
+    &__header {
+        display: flex;
+
+        h2 {
+            flex: 1
+        }
+    }
+
+    &__header-subtitle {
+        @include text-body;
+        flex: 2;
+    }
+
+    &__main-photo img {
+        min-width: 40rem;
+        max-width: 40rem;
+
+        @include tablet {
+            min-width: 22.5rem;
+            max-width: 22.5rem;
+        }
+    }
+
+    &__slider {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    &__gallery {
+        display: flex;
+        gap: 2rem;
+        min-width: max-content;
+        position: relative;
+
+        &-item img {
+            width: 20rem;
+            height: 32.5rem;
+            object-fit: cover;
+
+            @include tablet {
+                width: 10.5rem;
+                height: 16.7rem;
+            }
+        }
+    }
+
+    &__gallery::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+        pointer-events: none;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 1rem;
+
+        &-name {
+            font-weight: 600;
+        }
+
+        &-role,
+        &-descr {
+            @include text-body;
+            max-width: 80rem;
+
+            @include tablet {
+                max-width: 40rem;
+            }
+        }
+    }
+
+    &__pagination {
+        @include text-body;
+
+        @include tablet {
+            font-size: 1.2rem;
+        }
+        
+        @include mobile {
+            // max-width: 40rem;
+        }
+
+        width: 21rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-btn {
+            background: transparent;
+            border: 1px solid $dark;
+            width: 4rem;
+            height: 4rem;
+
+            img {
+                width: 2.3rem;
+            }
+        }
+    }
+
+}
