@@ -1,0 +1,54 @@
+.process {
+    background: $light;
+    padding: 10rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5rem;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        background: $gray-light;
+        padding: 5rem 2rem;
+        position: relative;
+        gap: 5rem;
+
+        h3 {
+            font-size: 3.6rem;
+            z-index: 2;
+            text-align: right
+        }
+
+        &-text {
+            @include text-body;
+            z-index: 2;
+        }
+    }
+
+    &__number {
+        @include text-body;
+        font-size: 13rem;
+        color: $gray-translucent;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+    }
+
+    &__cta {
+        background: $accent;
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-text {
+            @include text-body;
+        }
+    }
+}

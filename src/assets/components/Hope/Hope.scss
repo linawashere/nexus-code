@@ -1,0 +1,41 @@
+@import '../../styles/global/colors.scss';
+
+.hope {
+    background: $secondary;
+    height: 81rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+
+    &__title {
+      position: relative;  
+    }
+    
+
+    &__title::after {
+        content: '';
+        display: block;
+        width: 20rem;
+        height: 1px;
+        background: $dark;
+        position: absolute;
+        right: -25rem;
+        top: calc(50% + 1px);
+    }
+
+    &__title::before {
+        content: '';
+        display: block;
+        width: 20rem;
+        height: 1px;
+        background: $dark;
+        position: absolute;
+        left: -25rem;
+        top: calc(50% + 1px);
+    }
+
+    &:hover {
+        background: $accent;
+    }
+}

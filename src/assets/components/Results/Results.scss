@@ -1,0 +1,32 @@
+.results {
+    background: $gray-light;
+    padding: 10rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 5rem
+    }
+
+    &__number {
+        @include text-body;
+        font-size: 13.5rem;
+    }
+
+    &__label,
+    &__text {
+        @include text-body;
+    }
+
+    &__cta {
+        display: flex;
+
+        button {
+            width: 30rem;
+        }
+    }
+}
