@@ -77,24 +77,26 @@ const Cases = () => {
                 onSwiper={(swiper) => { swiperRef.current = swiper; }}
                 className="cases__slider"
                 modules={[Autoplay]}
-                spaceBetween={24}
+                spaceBetween={10}
                 slidesPerView={1.2}
                 autoplay={{ delay: 5000 }}
                 loop={true}
             >
                 {caseItems.map((item, index) => (
                     <SwiperSlide key={item.id}>
-                        <div className={`cases__slide cases__slide--${index % 2 === 0 ? 'accent' : 'gray'}`}>
-                            <h3 className="cases__badge">{item.badge}</h3>
-                            <div className="cases__slide-title">{item.title}</div>
-                            <p className="cases__slide-text">{item.text}</p>
-                            <div className="cases__results">
-                                {item.results.map((r, i) => <span key={i}>{r}</span>)}
+                        <div className="cases__slide-container">
+                            <div className={`cases__slide cases__slide--${index % 2 === 0 ? 'accent' : 'gray'}`}>
+                                <h3 className="cases__badge">{item.badge}</h3>
+                                <div className="cases__slide-title">{item.title}</div>
+                                <p className="cases__slide-text">{item.text}</p>
+                                <div className="cases__results">
+                                    {item.results.map((r, i) => <span key={i}>{r}</span>)}
+                                </div>
+                                <Button>Подробнее о кейсе</Button>
                             </div>
-                            <Button>Подробнее о кейсе</Button>
-                        </div>
-                        <div className={`cases__photo`}>
-                            <img src={item.photo}></img>
+                            <div className={`cases__photo`}>
+                                <img src={item.photo}></img>
+                            </div>
                         </div>
                     </SwiperSlide>
                 ))}

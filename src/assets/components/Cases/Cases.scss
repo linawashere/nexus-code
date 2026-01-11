@@ -20,6 +20,7 @@
     }
 
     &__photo {
+         width: 40%;
         min-width: 35rem;
         height: 60rem;
 
@@ -31,13 +32,12 @@
     }
 
     .swiper-slide {
-        width: 85% !important;
+        width: 100%;
         display: flex;
     }
 
     &__slider {
         width: 100%;
-        max-width: 1200px;
         margin: 0 auto;
 
         .cases__slide--accent {
@@ -48,6 +48,12 @@
             background: $gray-medium;
         }
 
+        .cases__slide-container {
+            display: flex;
+            width: 100%;
+            margin: 0 auto;
+        }
+
         .cases__slide {
             display: flex;
             flex-direction: column;
@@ -56,6 +62,7 @@
             min-height: 60rem;
             padding: 4rem 4rem 4rem 10rem;
             max-width: 80rem;
+            width: 60%;
 
             .cases__badge {
                 color: $dark;
