@@ -1,7 +1,7 @@
 @import '../utils/breakpoints.scss';
 
 @mixin base {
-   font-family: var(--main-font);
+    font-family: var(--main-font);
 }
 
 @mixin text-h1 {
@@ -10,8 +10,12 @@
     line-height: 90%;
     font-weight: 450;
 
+    @include tablet {
+        font-size: 4.5rem;
+    }
+
     @include mobile {
-        font-size: 4rem;
+        font-size: 3.5rem;
         line-height: 4.0rem;
     }
 }
@@ -20,10 +24,15 @@
     @include base;
     font-size: 4.0rem;
     line-height: 4.8rem;
-    font-weight: 700;
+    font-weight: 450;
+
+    @include tablet {
+        font-size: 2rem;
+    }
 
     @include mobile {
-        font-size: 2.8rem;
+        font-size: 2.4rem;
+        line-height: 2.8rem;
     }
 }
 
@@ -32,6 +41,10 @@
     font-size: 2.4rem;
     line-height: 100%;
     font-weight: 450;
+
+    @include tablet {
+        font-size: 2rem;
+    }
 
     @include mobile {
         font-size: 1.6rem;
@@ -95,9 +108,14 @@
     line-height: 2.4rem;
     font-weight: 500;
 
-    @include mobile {
+     @include tablet {
         font-size: 1.4rem;
         line-height: 2.2rem;
+    }
+
+    @include mobile {
+        font-size: 1rem;
+        line-height: 1.2rem;
     }
 }
 
@@ -115,25 +133,27 @@
 
 @mixin text-body {
     @include base;
-    font-size: 1.8rem;
-    line-height: 2.6rem;
-    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 115%;
+    font-weight: 450;
+
+    @include tablet {
+        font-size: 1.8rem;
+    }
 
     @include mobile {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
+        font-size: 1.4rem;
     }
 }
 
 @mixin text-bold {
     @include base;
-    font-size: 1.8rem;
-    line-height: 2.6rem;
+    font-size: 3.2rem;
+    line-height: 100%;
     font-weight: 600;
 
     @include mobile {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
+        font-size: 1.8rem;
     }
 }
 

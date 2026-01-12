@@ -8,31 +8,60 @@
     align-items: center;
     transition: all 0.5s ease;
 
-    &__title {
-      position: relative;  
+    @include mobile {
+        padding: 2rem;
     }
     
+    @include tablet {
+        padding: 3rem;
+    }
+
+    &__title {
+        position: relative;
+    }
+
+    @include tablet {
+        height: 45.5rem;
+    }
 
     &__title::after {
         content: '';
         display: block;
-        width: 20rem;
+        width: calc(0.1 * 100vw);
         height: 1px;
         background: $dark;
         position: absolute;
-        right: -25rem;
+        right: -20rem;
         top: calc(50% + 1px);
+
+        @include tablet {
+            width: 10rem;
+            right: -14rem;
+        }
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &__title::before {
         content: '';
         display: block;
-        width: 20rem;
+        width: calc(0.1 * 100vw);
         height: 1px;
         background: $dark;
         position: absolute;
-        left: -25rem;
+        left: -20rem;
         top: calc(50% + 1px);
+
+        @include tablet {
+            width: 10rem;
+            left: -14rem;
+        }
+
+        @include mobile {
+            display: none;
+        }
     }
 
     &:hover {

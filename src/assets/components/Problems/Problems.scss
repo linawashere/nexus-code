@@ -7,12 +7,25 @@
     display: flex;
     gap: 15rem;
 
+    @include mobile {
+        padding: 2rem;
+    }
+
+    @include tablet {
+        padding: 3rem;
+        gap: 4rem;
+    }
+
     &__text {
         width: 44rem;
 
         &-span {
             @include text-h2;
             color: $gray-medium;
+        }
+
+        @include mobile {
+            width: auto;
         }
     }
 

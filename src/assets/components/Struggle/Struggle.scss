@@ -7,6 +7,14 @@
     gap: 5rem;
     background: $light;
 
+    @include mobile {
+        padding: 2rem;
+    }
+
+    @include tablet {
+        padding: 3rem;
+    }
+
     &__text {
         display: flex;
         gap: 13rem;
@@ -15,27 +23,28 @@
             min-width: 44rem;
 
             @include tablet {
-                min-width: 35rem;
+                min-width: auto;
             }
         }
 
         &-title {
             @include text-body;
         }
+
+        @include tablet {
+            flex-direction: column;
+            gap: 2rem;
+        }
     }
 
     &__images {
         display: flex;
-        gap: 3rem;
         justify-content: space-between;
-
-        @include tablet {
-            gap: 1rem;
-        }
 
         img {
             display: block;
             flex: 1;
+            width: calc(100% / 3);
 
             @include tablet {
                 max-width: 20rem;
@@ -44,8 +53,6 @@
             @include mobile {
                 max-width: 10rem;
             }
-
-            width: 42rem;
         }
     }
 }

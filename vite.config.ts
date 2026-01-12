@@ -4,6 +4,9 @@ import * as path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -15,9 +18,9 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/assets/styles/variables/_colors.scss";
-          @import "@/assets/styles/variables/_fonts.scss";
-          @import "@/assets/styles/variables/_breakpoints.scss";
+          // @import "@/assets/styles/variables/_colors.scss";
+          // @import "@/assets/styles/variables/_fonts.scss";
+          // @import "@/assets/styles/variables/_breakpoints.scss";
         `,
       },
     },
