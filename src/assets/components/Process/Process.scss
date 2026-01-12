@@ -5,13 +5,13 @@
     flex-direction: column;
     gap: 5rem;
 
+    @include tablet {
+        padding: 3rem;
+    }
+
     @include mobile {
         padding: 2rem;
         gap: 2rem;
-    }
-
-    @include tablet {
-        padding: 3rem;
     }
 
     &__grid {

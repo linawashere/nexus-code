@@ -8,12 +8,12 @@
     gap: 5rem;
     background: $light;
 
-    @include mobile {
-        padding: 2rem;
-    }
-
     @include tablet {
         padding: 3rem;
+    }
+
+    @include mobile {
+        padding: 2rem;
     }
 
     &__grid {

@@ -10,17 +10,16 @@
     gap: 5rem;
     height: 100vh;
     position: sticky;
-    
-    @include mobile {
-        gap: 2rem;
-        padding: 2rem;
-    }
 
     @include tablet {
         padding: 3rem;
         gap: 3.5rem;
     }
 
+    @include mobile {
+        gap: 2rem;
+        padding: 2rem;
+    }
 
     &__title {
         @include text-body;
@@ -71,7 +70,7 @@
             padding: 2.6rem;
             max-width: 5.2rem;
             max-height: 5.2rem;
-            
+
             @include tablet {
                 max-width: 3.2rem;
                 max-height: 3.2rem;
@@ -97,7 +96,7 @@
                     max-width: 1.2rem;
                     height: 1.2rem;
                 }
-            }            
+            }
         }
     }
 }

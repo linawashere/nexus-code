@@ -9,6 +9,7 @@ import Struggle from './assets/components/Struggle/Struggle'
 import Team from './assets/components/Team/Team'
 import Footer from './assets/components/Footer/Footer'
 import Cases from './assets/components/Cases/Cases'
+import ContactForm from './assets/components/ContactForm/ContactForm'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Solution></Solution>
       <Results></Results>
       <Process></Process>
+      <ContactForm></ContactForm>
       <Cases></Cases>
       <Team></Team>
       <Footer></Footer>

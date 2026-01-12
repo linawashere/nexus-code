@@ -8,13 +8,15 @@
     align-items: center;
     transition: all 0.5s ease;
 
-    @include mobile {
-        padding: 2rem;
-    }
-    
     @include tablet {
         padding: 3rem;
     }
+
+    @include mobile {
+        padding: 2rem;
+    }
+
+
 
     &__title {
         position: relative;
