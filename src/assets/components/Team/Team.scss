@@ -20,7 +20,12 @@
         display: flex;
 
         h2 {
-            flex: 1
+            flex: 1;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 2rem;
         }
     }
 
