@@ -5,6 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 import { useRef } from "react";
+import type { Swiper as SwiperType } from 'swiper';
 
 const caseItems = [
     {
@@ -17,7 +18,7 @@ const caseItems = [
             "• Трафик: 2.5M операций/день",
             "• Команда: 3 разработчика, 4 месяца"
         ],
-        photo: '../../../public/images/cases1.jpg'
+        photo: './images/cases1.jpg'
     },
     {
         id: 2,
@@ -29,7 +30,7 @@ const caseItems = [
             "• Скорость: 0.8s FCP",
             "• Офлайн: полный функционал"
         ],
-        photo: '../../../public/images/cases2.jpg'
+        photo: './images/cases2.jpg'
     },
     {
         id: 3,
@@ -41,7 +42,7 @@ const caseItems = [
             "• Аптайм: 99.99%",
             "• Интеграция с 12 EMR-системами"
         ],
-        photo: '../../../public/images/cases3.jpg'
+        photo: './images/cases3.jpg'
     },
     {
         id: 4,
@@ -53,12 +54,12 @@ const caseItems = [
             "• Точность прогноза: 92%",
             "• Масштабируемость до 1M устройств"
         ],
-        photo: '../../../public/images/cases4.jpg'
+        photo: './images/cases4.jpg'
     }
 ];
 
 const Cases = () => {
-    const swiperRef = useRef();
+    const swiperRef = useRef<SwiperType | null>(null);
     return (
         <div className="cases" id="cases">
             <h2 className="cases__subtitle">Примеры решения сложных технических задач</h2>

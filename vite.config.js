@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react';
 import * as path from 'path';
 export default defineConfig({
     plugins: [react()],
+    base: '/nexus-code/',
+    build: {
+        outDir: 'dist',
+    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
