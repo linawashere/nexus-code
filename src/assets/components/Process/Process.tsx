@@ -2,7 +2,7 @@ import Button from '../Button/Button';
 
 const Process = () => {
     return (
-        <div className="process">
+        <div className="process" id="process">
             <h2>Как мы создаём продукты</h2>
             <div className="process__grid">
                 <div className="process__card">

@@ -1,5 +1,3 @@
-import Button from '../Button/Button';
-
 const Problems = () => {
     return (
         <div className="problems">

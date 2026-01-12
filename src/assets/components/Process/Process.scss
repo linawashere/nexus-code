@@ -5,10 +5,23 @@
     flex-direction: column;
     gap: 5rem;
 
+    @include mobile {
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    @include tablet {
+        padding: 3rem;
+    }
+
     &__grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, 1fr);
         gap: 5rem;
+
+        @include mobile {
+            gap: 2rem;
+        }
     }
 
     &__card {
@@ -49,6 +62,12 @@
 
         &-text {
             @include text-body;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 5rem;
+            align-items: flex-start;
         }
     }
 }
