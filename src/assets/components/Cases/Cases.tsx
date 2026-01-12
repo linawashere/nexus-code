@@ -79,8 +79,22 @@ const Cases = () => {
                 modules={[Autoplay]}
                 spaceBetween={10}
                 slidesPerView={1.2}
-                autoplay={{ delay: 5000 }}
+                // autoplay={{ delay: 5000 }}
                 loop={true}
+                breakpoints={{
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 1.2,
+                        spaceBetween: 30
+                    },
+                    1024: {
+                        slidesPerView: 1.2,
+                        spaceBetween: 40
+                    }
+                }}
             >
                 {caseItems.map((item, index) => (
                     <SwiperSlide key={item.id}>

@@ -20,13 +20,21 @@
     }
 
     &__photo {
-         width: 40%;
+        width: 40%;
         min-width: 35rem;
         height: 60rem;
 
         img {
             object-fit: cover;
             width: 35rem;
+            height: 100%;
+
+            @include tablet {
+                width: 20rem;
+            }
+        }
+
+        @include tablet {
             height: 100%;
         }
     }
@@ -64,20 +72,61 @@
             max-width: 80rem;
             width: 60%;
 
+            @include tablet {
+                padding-left: 5rem;
+                gap: 2rem;
+                justify-content: center;
+                min-height: 45rem;
+                height: 50rem;
+            }
+
+            @include mobile {
+                padding: 2rem;
+                gap: 1rem;
+                justify-content: center;
+                min-height: 20rem;
+                height: 25rem;
+            }
+
             .cases__badge {
                 color: $dark;
             }
 
             .cases__slide-title {
                 @include text-bold;
+
+                @include tablet {
+                    font-size: 2.2rem;
+                }
+
+                @include mobile {
+                    font-size: 1.2rem;
+                }
             }
 
             .cases__slide-text {
                 @include text-body;
+
+                @include tablet {
+                    font-size: 1.6rem;
+                }
+
+                @include mobile {
+                    font-size: 0.8rem;
+                }
             }
 
             button {
                 width: 45rem;
+
+                @include tablet {
+                    width: 25rem;
+                }
+
+                @include mobile {
+                    width: 15rem;
+                    // padding: 1rem;
+                }
             }
 
             .cases__results {
@@ -85,6 +134,14 @@
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
+
+                @include tablet {
+                    font-size: 1.6rem;
+                }
+
+                @include mobile {
+                    font-size: 0.8rem;
+                }
             }
         }
     }
@@ -106,6 +163,16 @@
         border: none;
         background: url('../../../../public/images/arrow.png') no-repeat center, transparent;
         cursor: pointer;
+
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        @include mobile {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 
     .cases__nav--prev {
