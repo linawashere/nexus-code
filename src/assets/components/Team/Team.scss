@@ -149,6 +149,10 @@
                 width: 3rem;
                 height: 3rem;
             }
+
+            &--prev {
+                transform: scaleX(-1);
+            }
         }
     }
 

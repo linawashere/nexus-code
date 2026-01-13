@@ -64,7 +64,7 @@ const Team = () => {
         }
     ]
 
-    const [currentSlide, setCurrentSlide] = useState(1);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     return (
         <div className="team" id="team">
@@ -83,7 +83,7 @@ const Team = () => {
                 <div className="team__slider-right">
                     <div className="team__gallery">
                             {TeamMembers.map(member => {
-                                if (member.id - 1 === currentSlide) return null;
+                                if (member.id === currentSlide + 1) return null;
 
                                 return (
                                     <div
@@ -106,12 +106,13 @@ const Team = () => {
                             team__pagination-btn--prev
                         "
                             onClick={() => {
-                                setCurrentSlide(prev => Math.max(prev - 1, 1))
+                                setCurrentSlide(prev => prev === 0 ? TeamMembers.length - 1 : prev - 1)
                             }}
                         >
+                             <img src="./images/arrow.png" alt="button prev" />
                         </button>
                         <span className="team__pagination-counter">
-                            {currentSlide}/6
+                            {currentSlide + 1}/6
                         </span>
                         <button
                             className="
@@ -119,10 +120,10 @@ const Team = () => {
                             team__pagination-btn--next
                         "
                             onClick={() => {
-                                setCurrentSlide(prev => Math.min(prev + 1, TeamMembers.length - 1))
+                                setCurrentSlide(prev => prev === TeamMembers.length - 1 ? 0 : prev + 1)
                             }}
                         >
-                            <img src="/images/arrow.png" alt="button next" />
+                            <img src="./images/arrow.png" alt="button next" />
                         </button>
                     </div>
                     <div className="team__info">
