@@ -42,5 +42,43 @@
             height: 4.2rem;
         }
     }
+}
 
+.checkbox-label {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+input#agreement.checkbox-input {
+    all: unset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    outline: 1px solid $dark;
+
+    &:checked {
+        background: $dark;
+
+        &::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}
+
+.error-message {
+    @include text-body;
+    color: red;
 }
