@@ -89,7 +89,7 @@ const Team = () => {
                                     <div
                                         key={member.id}
                                         className="team__gallery-item"
-                                        onClick={() => setCurrentSlide(member.id)}
+                                        onClick={() => setCurrentSlide(member.id - 1)}
                                     >
                                         <img
                                             src={`${member.photo}`}
