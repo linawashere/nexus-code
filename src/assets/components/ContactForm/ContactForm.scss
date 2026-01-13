@@ -7,6 +7,10 @@
     gap: 5rem;
     background: $gray-medium;
 
+    @include from-tablet {
+        padding-left: 12rem;
+    }
+
     @include tablet {
         padding: 3rem;
         gap: 3.5rem;
@@ -19,6 +23,10 @@
 
     &__descr {
         @include text-body;
+
+        @include from-tablet {
+            max-width: 70rem;
+        }
     }
 }
 
@@ -42,12 +50,20 @@
             height: 4.2rem;
         }
     }
+
+    @include from-tablet {
+        max-width: 70rem;
+    }
 }
 
 .checkbox-label {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+}
+
+.checkbox-text {
+    @include text-body;
 }
 
 input#agreement.checkbox-input {
