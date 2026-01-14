@@ -16,10 +16,17 @@
         padding: 2rem;
     }
 
-
+    &:hover {
+        background: $accent;
+        
+        .hope__title {
+            transform: rotate(360deg) scale(1.05);
+        }
+    }
 
     &__title {
         position: relative;
+        transition: transform 0.5s ease;
     }
 
     @include tablet {
