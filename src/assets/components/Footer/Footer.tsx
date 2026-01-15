@@ -1,3 +1,33 @@
+const GeometricDetails = () => {
+    return (
+        <div className="geometric-container">
+            <svg width="170" height="180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15" y="80" width="100" height="100" fill="#A8B1C244" />
+
+                <rect x="50" y="60" width="80" height="80" className="cube" />
+
+                <polygon points="130,60 160,40 160,120 130,140" className="cube" />
+
+                <polygon points="50,60 80,40 160,40 130,60" className="cube" />
+
+                <g className="dots">
+                    {Array.from({ length: 5 }).map((_, row) =>
+                        Array.from({ length: 5 }).map((_, col) => (
+                            <circle
+                                key={`${row}-${col}`}
+                                cx={1 + col * 20}
+                                cy={65 + row * 20}
+                                r="1.5"
+                                fill="#000"
+                            />
+                        ))
+                    )}
+                </g>
+            </svg>
+        </div >
+    );
+};
+
 const Footer = () => {
     return (
         <footer className="footer">
@@ -21,7 +51,7 @@ const Footer = () => {
                 <span>Copyright: © 2026 Nexus code</span>
                 <a href="#">Политика конфиденциальности и условия использования</a>
             </div>
-
+            <GeometricDetails></GeometricDetails>
         </footer>
     )
 }

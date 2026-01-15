@@ -7,12 +7,13 @@
     gap: 5rem;
     overflow: hidden;
 
-    @include mobile {
-        padding: 2rem;
-    }
-
     @include tablet {
         padding: 3rem;
+    }
+    
+    @include mobile {
+        padding: 2rem;
+        gap: 2rem;
     }
 
     &__badge {
@@ -160,8 +161,10 @@
         width: 4rem;
         height: 4rem;
         padding: 1rem;
+        
         border: none;
         background: url('../../../../public/images/arrow.png') no-repeat center, transparent;
+        background-size: contain;
         cursor: pointer;
 
         @include tablet {

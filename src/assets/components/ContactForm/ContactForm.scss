@@ -1,0 +1,100 @@
+@import '../../styles/global/colors.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    gap: 5rem;
+    background: $gray-medium;
+
+    @include from-tablet {
+        padding-left: 12rem;
+    }
+
+    @include tablet {
+        padding: 3rem;
+        gap: 3.5rem;
+    }
+
+    @include mobile {
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    &__descr {
+        @include text-body;
+
+        @include from-tablet {
+            max-width: 70rem;
+        }
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input {
+        @include text-body;
+        padding: 1rem 2rem;
+        height: 4.8rem;
+        border: none;
+        width: 100%;
+
+        @include tablet {
+            height: 4.5rem;
+        }
+
+        @include mobile {
+            height: 4.2rem;
+        }
+    }
+
+    @include from-tablet {
+        max-width: 70rem;
+    }
+}
+
+.checkbox-label {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.checkbox-text {
+    @include text-body;
+}
+
+input#agreement.checkbox-input {
+    all: unset;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    outline: 1px solid $dark;
+
+    &:checked {
+        background: $dark;
+
+        &::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}
+
+.error-message {
+    @include text-body;
+    color: red;
+}

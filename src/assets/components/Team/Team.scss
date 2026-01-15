@@ -7,20 +7,25 @@
     gap: 5rem;
     overflow: hidden;
 
+    @include tablet {
+        padding: 3rem;
+    }
+
     @include mobile {
         padding: 2rem;
         flex-direction: column;
-    }
-
-    @include tablet {
-        padding: 3rem;
     }
 
     &__header {
         display: flex;
 
         h2 {
-            flex: 1
+            flex: 1;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            gap: 2rem;
         }
     }
 
@@ -38,7 +43,7 @@
             max-width: 22.5rem;
         }
 
-        @include tablet {
+        @include mobile {
             min-width: 100%;
             max-width: 100%;
         }
@@ -125,7 +130,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
+
+        @include tablet {
+            width: 17rem;
+        }
+
         @include mobile {
             width: 15rem;
         }
@@ -138,11 +147,17 @@
 
             img {
                 width: 2.3rem;
+                height: auto; 
             }
-
-            @include mobile {
+            
+            @include tablet {
                 width: 3rem;
                 height: 3rem;
+                display: block;
+            }
+
+            &--prev {
+                transform: scaleX(-1);
             }
         }
     }

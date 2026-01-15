@@ -8,16 +8,25 @@
     align-items: center;
     transition: all 0.5s ease;
 
-    @include mobile {
-        padding: 2rem;
-    }
-    
     @include tablet {
         padding: 3rem;
     }
 
+    @include mobile {
+        padding: 2rem;
+    }
+
+    &:hover {
+        background: $accent;
+        
+        .hope__title {
+            transform: rotate(360deg) scale(1.05);
+        }
+    }
+
     &__title {
         position: relative;
+        transition: transform 0.5s ease;
     }
 
     @include tablet {

@@ -5,7 +5,7 @@ const Team = () => {
         {
             id: 1,
             name: 'Алексей Воронин',
-            photo: 'photo-1',
+            photo: './images/photo-1.png',
             role: 'Tech Lead',
             experience: '10+ лет во фронтенде',
             description: 'Специализируется на архитектуре сложных SPA. Прошёл путь от верстальщика до руководителя отдела разработки в EdTech',
@@ -15,7 +15,7 @@ const Team = () => {
         {
             id: 2,
             name: 'Марина Соколова',
-            photo: 'photo-2',
+            photo: './images/photo-2.png',
             role: 'Senior Frontend Developer',
             experience: '8 лет коммерческой разработки',
             description: 'Эксперт по производительности и оптимизации. Ускорила загрузку 50+ проектов на 30-70%',
@@ -25,7 +25,7 @@ const Team = () => {
         {
             id: 3,
             name: 'Дмитрий Ковалёв',
-            photo: 'photo-3',
+            photo: './images/photo-3.png',
             role: 'UX/UI Lead',
             experience: '12 лет в дизайне интерфейсов',
             description: 'Превращает сложные бизнес-процессы в интуитивные интерфейсы. Работал с банками, телекомом, гос. проектами',
@@ -35,7 +35,7 @@ const Team = () => {
         {
             id: 4,
             name: 'Иван Петров',
-            photo: 'photo-4',
+            photo: './images/photo-4.png',
             role: 'Fullstack Developer',
             experience: '6 лет fullstack разработки',
             description: 'Может сделать всё — от базы данных до анимаций в браузере. Любит сложные интеграции и нестандартные задачи',
@@ -45,7 +45,7 @@ const Team = () => {
         {
             id: 5,
             name: 'Екатерина Морозова',
-            photo: 'photo-5',
+            photo: './images/photo-5.png',
             role: 'Project Manager',
             experience: '7 лет управления IT-проектами',
             description: 'Организует процессы так, что клиенты получают результат вовремя, а разработчики не горят',
@@ -55,7 +55,7 @@ const Team = () => {
         {
             id: 6,
             name: 'Артём Новиков',
-            photo: 'photo-6',
+            photo: './images/photo-6.png',
             role: 'QA Lead',
             experience: '9 лет тестирования веб-приложений',
             description: 'Находит баги там, где их быть не должно. Выстроил процесс QA, снизивший количество production-инцидентов на 90%',
@@ -64,7 +64,7 @@ const Team = () => {
         }
     ]
 
-    const [currentSlide, setCurrentSlide] = useState(1);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     return (
         <div className="team" id="team">
@@ -78,21 +78,21 @@ const Team = () => {
 
             <div className="team__slider">
                 <div className="team__main-photo">
-                    <img src={`/images/${TeamMembers[currentSlide].photo}.png`} alt={TeamMembers[currentSlide].name} />
+                    <img src={`${TeamMembers[currentSlide].photo}`} alt={TeamMembers[currentSlide].name} />
                 </div>
                 <div className="team__slider-right">
                     <div className="team__gallery">
                             {TeamMembers.map(member => {
-                                if (member.id - 1 === currentSlide) return null;
+                                if (member.id === currentSlide + 1) return null;
 
                                 return (
                                     <div
                                         key={member.id}
                                         className="team__gallery-item"
-                                        onClick={() => setCurrentSlide(member.id)}
+                                        onClick={() => setCurrentSlide(member.id - 1)}
                                     >
                                         <img
-                                            src={`/images/${member.photo}.png`}
+                                            src={`${member.photo}`}
                                             alt={member.name}
                                         />
                                     </div>
@@ -106,12 +106,13 @@ const Team = () => {
                             team__pagination-btn--prev
                         "
                             onClick={() => {
-                                setCurrentSlide(prev => Math.max(prev - 1, 1))
+                                setCurrentSlide(prev => prev === 0 ? TeamMembers.length - 1 : prev - 1)
                             }}
                         >
+                             <img src="./images/arrow.png" alt="button prev" />
                         </button>
                         <span className="team__pagination-counter">
-                            {currentSlide}/6
+                            {currentSlide + 1}/6
                         </span>
                         <button
                             className="
@@ -119,10 +120,10 @@ const Team = () => {
                             team__pagination-btn--next
                         "
                             onClick={() => {
-                                setCurrentSlide(prev => Math.min(prev + 1, TeamMembers.length - 1))
+                                setCurrentSlide(prev => prev === TeamMembers.length - 1 ? 0 : prev + 1)
                             }}
                         >
-                            <img src="/images/arrow.png" alt="button next" />
+                            <img src="./images/arrow.png" alt="button next" />
                         </button>
                     </div>
                     <div className="team__info">
